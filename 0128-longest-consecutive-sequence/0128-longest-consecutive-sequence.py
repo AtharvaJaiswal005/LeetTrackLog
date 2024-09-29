@@ -4,7 +4,7 @@ class Solution:
         lcs=0
         for i in nums:
             if not i-1 in hset:
-                l=0
+                l=1
                 while i+l in hset:
                     l+=1
                 lcs=max(lcs,l)
