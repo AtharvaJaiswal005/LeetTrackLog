@@ -36,5 +36,3 @@ Time: 98 ms (25.35%), Space: 20.6 MB (40.78%) - LeetHub
 ---
 
 Feel free to browse through the solutions. All solutions are organized by their Leetcode problem numbers for easy reference. Contributions are not necessary, as this repo mainly serves as my personal submission tracker.
-
----
