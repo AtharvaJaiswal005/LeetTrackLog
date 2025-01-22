@@ -5,17 +5,19 @@ class Solution(object):
         :rtype: bool
         """
         from collections import defaultdict
-        cols=defaultdict(set)
         row=defaultdict(set)
-        sq=defaultdict(set) # key (r//3,c//3)
-        for r in range(9):
-            for c in range(9):
+        col=defaultdict(set)
+        sqr=defaultdict(set)
+        for r in range(len(board[0])):
+            for c in range(len(board[0])):
                 if board[r][c]==".":
                     continue
-                if (board[r][c] in row[r] or board[r][c] in cols[c] or board[r][c] in sq[(r//3,c//3)]):
+                if (board[r][c] in row[r] or 
+                    board[r][c] in col[c] or 
+                    board[r][c] in sqr[(r//3,c//3)]):
                     return False
-                cols[c].add(board[r][c])
                 row[r].add(board[r][c])
-                sq[(r//3,c//3)].add(board[r][c])
+                col[c].add(board[r][c])
+                sqr[(r//3,c//3)].add(board[r][c])
         return True
                 
