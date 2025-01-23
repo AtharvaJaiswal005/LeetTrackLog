@@ -4,11 +4,17 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        ct=''.join([i.lower() for i in s if i.isalnum()])
-        l=0;r=len(ct)-1
+        l=0;r=len(s)-1
         while l<r:
-            if ct[l]!=ct[r]:
+            if not s[l].isalnum():
+                l+=1
+                continue
+            if not s[r].isalnum():
+                r-=1
+                continue
+            if s[l].lower()!=s[r].lower():
                 return False
             l+=1
             r-=1
+
         return True
